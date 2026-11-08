@@ -1,0 +1,16 @@
+.wrap { overflow-x: auto; border: 1px solid var(--border); border-radius: calc(var(--radius) * 1.5); background: var(--surface); }
+.table { width: 100%; border-collapse: collapse; font-size: .92rem; }
+.table th { text-align: left; padding: .9rem 1rem; color: var(--muted-foreground); font-size: .75rem; text-transform: uppercase; letter-spacing: .08em; background: var(--surface-2); }
+.table td { padding: .85rem 1rem; border-top: 1px solid var(--border); white-space: nowrap; }
+.table tbody tr:hover { background: oklch(0.62 0.19 255 / .08); }
+.name { font-weight: 700; }
+.tag, .tagBlue { display: inline-block; font-size: .7rem; font-weight: 900; padding: .2rem .5rem; border-radius: 999px; margin-right: .3rem; }
+.tag { background: var(--accent); color: var(--accent-foreground); }
+.tagBlue { background: var(--primary); color: var(--primary-foreground); }
+.actions { text-align: right; display: flex; gap: .5rem; justify-content: flex-end; }
+.edit, .del { padding: .4rem .85rem; border-radius: 999px; font-weight: 700; cursor: pointer; font-size: .82rem; background: transparent; }
+.edit { border: 1px solid var(--primary); color: var(--primary); }
+.edit:hover { background: var(--primary); color: var(--primary-foreground); }
+.del { border: 1px solid var(--destructive); color: var(--destructive); }
+.del:hover { background: var(--destructive); color: var(--primary-foreground); }
+.empty { color: var(--muted-foreground); }

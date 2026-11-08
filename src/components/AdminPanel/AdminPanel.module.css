@@ -1,0 +1,105 @@
+.top { display: flex; justify-content: space-between; align-items: flex-end; gap: 1rem; flex-wrap: wrap; margin-bottom: 1.5rem; }
+.title { margin: 0; font-size: 2.25rem; font-weight: 900; }
+.welcome { margin: .3rem 0 0; color: var(--muted-foreground); }
+.buttons { display: flex; gap: .75rem; }
+.primary, .secondary { padding: .7rem 1.3rem; border-radius: 999px; font-weight: 900; cursor: pointer; }
+.primary { background: var(--gradient-accent); color: var(--accent-foreground); border: 0; box-shadow: var(--shadow-accent); }
+.secondary { background: transparent; color: var(--foreground); border: 1px solid var(--primary); }
+.secondary:disabled { opacity: .6; }
+.formWrap { margin-bottom: 1.5rem; }
+
+/* --- Estilos del Modal Custom de Eliminación --- */
+.modalOverlay {
+  position: fixed;
+  inset: 0;
+  background: oklch(0.14 0.05 262 / 0.8);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 1rem;
+}
+
+.modalCard {
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg, 0.75rem);
+  padding: 2rem;
+  width: 100%;
+  max-width: 420px;
+  box-shadow: var(--shadow-card);
+  animation: modalScaleIn 0.2s ease-out;
+}
+
+@keyframes modalScaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.modalTitle {
+  margin: 0 0 0.75rem 0;
+  font-size: 1.25rem;
+  font-weight: 900;
+  color: var(--foreground);
+}
+
+.modalText {
+  margin: 0 0 1.5rem 0;
+  color: var(--muted-foreground);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.modalText strong {
+  color: var(--foreground);
+}
+
+.modalActions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.75rem;
+}
+
+.modalBtnCancel,
+.modalBtnConfirm {
+  padding: 0.6rem 1.2rem;
+  border-radius: 999px;
+  font-weight: 700;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: opacity 0.2s;
+}
+
+.modalBtnCancel {
+  background: transparent;
+  color: var(--foreground);
+  border: 1px solid var(--border);
+}
+
+.modalBtnCancel:hover {
+  background: var(--muted);
+}
+
+.modalBtnConfirm {
+  background: var(--destructive);
+  color: #fff;
+  border: none;
+  box-shadow: 0 4px 14px oklch(0.63 0.22 25 / 0.4);
+}
+
+.modalBtnConfirm:hover {
+  opacity: 0.9;
+}
+
+.modalBtnCancel:disabled,
+.modalBtnConfirm:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}

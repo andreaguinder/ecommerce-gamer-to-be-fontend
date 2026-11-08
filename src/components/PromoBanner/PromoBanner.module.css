@@ -1,0 +1,8 @@
+.promo {
+  margin-top: 3.5rem; padding: 2rem clamp(1.25rem, 4vw, 3rem); border-radius: calc(var(--radius) * 2);
+  background: var(--gradient-primary); display: flex; justify-content: space-between; align-items: center; gap: 1.5rem; flex-wrap: wrap;
+  box-shadow: var(--shadow-glow);
+}
+.title { margin: 0; font-size: clamp(1.3rem, 3vw, 2rem); font-weight: 900; }
+.text { margin: .4rem 0 0; opacity: .9; }
+.highlight { background: var(--accent); color: var(--accent-foreground); font-weight: 900; font-size: clamp(1.4rem, 3vw, 2.2rem); padding: .6rem 1.4rem; border-radius: var(--radius); box-shadow: var(--shadow-accent); }

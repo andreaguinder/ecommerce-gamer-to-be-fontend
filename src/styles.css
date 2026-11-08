@@ -1,0 +1,79 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-lg: var(--radius);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-accent: var(--accent);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-destructive: var(--destructive);
+  --font-sans: "Lato", system-ui, sans-serif;
+}
+
+/* Gamer To Be — azul profundo + naranja complementario */
+:root {
+  --radius: 0.75rem;
+  --font-body: "Lato", system-ui, sans-serif;
+
+  --background: oklch(0.16 0.04 260);
+  --surface: oklch(0.21 0.05 260);
+  --surface-2: oklch(0.26 0.06 260);
+  --foreground: oklch(0.97 0.01 250);
+  --card: var(--surface);
+  --card-foreground: var(--foreground);
+  --popover: var(--surface);
+  --popover-foreground: var(--foreground);
+  --primary: oklch(0.62 0.19 255);
+  --primary-strong: oklch(0.52 0.2 260);
+  --primary-foreground: oklch(0.99 0 0);
+  --accent: oklch(0.72 0.18 55);
+  --accent-strong: oklch(0.66 0.2 45);
+  --accent-foreground: oklch(0.18 0.03 50);
+  --muted: oklch(0.28 0.04 260);
+  --muted-foreground: oklch(0.72 0.03 255);
+  --border: oklch(0.34 0.06 260);
+  --input: oklch(0.3 0.05 260);
+  --ring: var(--primary);
+  --destructive: oklch(0.63 0.22 25);
+  --success: oklch(0.7 0.16 150);
+
+  --gradient-primary: linear-gradient(135deg, var(--primary-strong), var(--primary));
+  --gradient-accent: linear-gradient(135deg, var(--accent-strong), var(--accent));
+  --gradient-hero: linear-gradient(90deg, oklch(0.14 0.05 262 / 0.95) 0%, oklch(0.14 0.05 262 / 0.55) 55%, transparent 100%);
+  --shadow-card: 0 10px 30px -12px oklch(0.05 0.05 260 / 0.8);
+  --shadow-glow: 0 0 0 1px var(--primary), 0 12px 32px -10px oklch(0.62 0.19 255 / 0.55);
+  --shadow-accent: 0 10px 26px -10px oklch(0.72 0.18 55 / 0.6);
+}
+
+* { box-sizing: border-box; border-color: var(--border); }
+html, body { margin: 0; }
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+}
+a { color: inherit; text-decoration: none; }
+img { max-width: 100%; display: block; }
+button, input, select, textarea { font: inherit; }
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}

@@ -16,6 +16,7 @@ export function Header() {
           <Link to="/" className={styles.link} activeProps={{ className: styles.active }} activeOptions={{ exact: true }}>Inicio</Link>
           <Link to="/productos" className={styles.link} activeProps={{ className: styles.active }}>Productos</Link>
           <Link to="/nosotros" className={styles.link} activeProps={{ className: styles.active }}>Nosotros</Link>
+          <Link to="/contacto" className={styles.link} activeProps={{ className: styles.active }}>Contacto</Link>
           {user ? (
             <>
               <Link to="/admin" className={styles.link} activeProps={{ className: styles.active }}>Panel</Link>

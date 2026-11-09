@@ -22,8 +22,12 @@ export async function http<T>(path: string, options: RequestInit = {}): Promise<
   if (!res.ok) {
     let msg = `Error ${res.status}`;
     try {
-      const body = (await res.json()) as { message?: string };
-      if (body.message) msg = body.message;
+      const body = (await res.json()) as { message?: string; error?: string };
+      if (body.message) {
+        msg = body.message;
+      } else if (body.error) {
+        msg = body.error;
+      }
     } catch {
       /* sin cuerpo */
     }

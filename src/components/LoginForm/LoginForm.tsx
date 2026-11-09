@@ -1,5 +1,4 @@
 import { useState, type FormEvent } from "react";
-import { USE_MOCK } from "@/services/config";
 import styles from "./LoginForm.module.css";
 
 interface Props {
@@ -31,17 +30,28 @@ export function LoginForm({ onSubmit }: Props) {
       <p className={styles.subtitle}>Accedé al panel de administración</p>
       <label className={styles.label}>
         Email
-        <input className={styles.input} type="email" required value={email} onChange={(e) => setEmail(e.target.value)} />
+        <input
+          className={styles.input}
+          type="email"
+          required
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+        />
       </label>
       <label className={styles.label}>
         Contraseña
-        <input className={styles.input} type="password" required value={password} onChange={(e) => setPassword(e.target.value)} />
+        <input
+          className={styles.input}
+          type="password"
+          required
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+        />
       </label>
       {error && <p className={styles.error}>{error}</p>}
-      <button className={styles.submit} disabled={loading}>{loading ? "Ingresando…" : "Ingresar"}</button>
-      {USE_MOCK && (
-        <p className={styles.hint}>Modo demo: admin@gamertobe.com / admin123</p>
-      )}
+      <button className={styles.submit} disabled={loading}>
+        {loading ? "Ingresando…" : "Ingresar"}
+      </button>
     </form>
   );
 }

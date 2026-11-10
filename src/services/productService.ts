@@ -1,4 +1,12 @@
+import { TOKEN_KEY } from "./config";
+
 const API_URL = import.meta.env.VITE_API_URL;
+
+// Obtiene el token automáticamente del almacenamiento local
+const getToken = () => {
+  if (typeof window === "undefined") return null;
+  return localStorage.getItem(TOKEN_KEY);
+};
 
 export const productService = {
   // Obtener todos

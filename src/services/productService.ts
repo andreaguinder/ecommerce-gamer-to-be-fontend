@@ -24,12 +24,13 @@ export const productService = {
   },
 
   // Crear (para el panel de admin, usando el token JWT)
-  create: async (productData: any, token: string) => {
+create: async (productData: any) => {
+    const token = getToken(); // <-- Lo busca solo acá
     const res = await fetch(`${API_URL}/products`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        Authorization: `Bearer ${token}`
+        ...(token ? { Authorization: `Bearer ${token}` } : {})
       },
       body: JSON.stringify(productData)
     });
@@ -38,12 +39,13 @@ export const productService = {
   },
 
   // Actualizar
-  update: async (id: string, productData: any, token: string) => {
+  update: async (id: string, productData: any) => {
+    const token = getToken(); // <-- Lo busca solo acá
     const res = await fetch(`${API_URL}/products/${id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
-        Authorization: `Bearer ${token}`
+        ...(token ? { Authorization: `Bearer ${token}` } : {})
       },
       body: JSON.stringify(productData)
     });
@@ -52,11 +54,12 @@ export const productService = {
   },
 
   // Eliminar
-  delete: async (id: string, token: string) => {
+  delete: async (id: string) => {
+    const token = getToken(); // <-- Lo busca solo acá
     const res = await fetch(`${API_URL}/products/${id}`, {
       method: "DELETE",
       headers: {
-        Authorization: `Bearer ${token}`
+        ...(token ? { Authorization: `Bearer ${token}` } : {})
       }
     });
     if (!res.ok) throw new Error("Error al eliminar el producto");

@@ -27,8 +27,8 @@ export function AdminPanel() {
     mutationFn: (input: ProductInput) => {
       const productId = editing ? (editing.id || (editing as any)._id) : null;
       return editing
-        ? productService.update(productId, input, authToken)
-        : productService.create(input, authToken);
+        ? productService.update(productId, input)
+        : productService.create(input);
     },
     onSuccess: () => {
       toast.success(editing ? "Producto actualizado" : "Producto creado");
@@ -40,7 +40,7 @@ export function AdminPanel() {
   });
 
   const del = useMutation({
-    mutationFn: (id: string) => productService.delete(id, authToken),
+    mutationFn: (id: string) => productService.delete(id),
     onSuccess: () => {
       toast.success("Producto eliminado");
       setProductToDelete(null);
@@ -104,7 +104,6 @@ export function AdminPanel() {
             window.scrollTo({ top: 0, behavior: "smooth" });
           }}
           onDelete={(p) => {
-            // En vez de usar el confirm() feo, abrimos nuestro modal custom
             setProductToDelete(p);
           }}
         />

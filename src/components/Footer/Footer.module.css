@@ -1,5 +1,31 @@
-.footer { margin-top: 5rem; border-top: 1px solid var(--border); background: var(--surface); }
-.inner { display: flex; justify-content: space-between; align-items: center; padding-top: 2rem; padding-bottom: 2rem; flex-wrap: wrap; gap: 1rem; }
-.brand { margin: 0; font-weight: 900; font-size: 1.25rem; }
-.brand span { color: var(--accent); }
-.copy { margin: 0; color: var(--muted-foreground); font-size: .9rem; }
+.footer {
+    margin-top: 5rem;
+    border-top: 1px solid var(--border);
+    background: var(--surface);
+}
+
+.inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.brand {
+    margin: 0;
+    font-weight: 900;
+    font-size: 1.25rem;
+}
+
+.brand span {
+    color: var(--accent);
+}
+
+.copy {
+    margin: 0;
+    color: var(--muted-foreground);
+    font-size: .9rem;
+}

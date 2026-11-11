@@ -16,7 +16,7 @@ export const productService = {
     return await res.json();
   },
 
-  // Obtener por ID (por si lo usás en detalle)
+  // Obtener por ID 
   getById: async (id: string) => {
     const res = await fetch(`${API_URL}/products/${id}`);
     if (!res.ok) throw new Error("Error al obtener el producto");
@@ -25,7 +25,7 @@ export const productService = {
 
   // Crear (para el panel de admin, usando el token JWT)
 create: async (productData: any) => {
-    const token = getToken(); // <-- Lo busca solo acá
+    const token = getToken(); 
     const res = await fetch(`${API_URL}/products`, {
       method: "POST",
       headers: {
@@ -40,7 +40,7 @@ create: async (productData: any) => {
 
   // Actualizar
   update: async (id: string, productData: any) => {
-    const token = getToken(); // <-- Lo busca solo acá
+    const token = getToken(); 
     const res = await fetch(`${API_URL}/products/${id}`, {
       method: "PUT",
       headers: {
@@ -55,7 +55,7 @@ create: async (productData: any) => {
 
   // Eliminar
   delete: async (id: string) => {
-    const token = getToken(); // <-- Lo busca solo acá
+    const token = getToken(); 
     const res = await fetch(`${API_URL}/products/${id}`, {
       method: "DELETE",
       headers: {
